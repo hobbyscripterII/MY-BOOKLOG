@@ -3,41 +3,142 @@
 <section>
 </section>
 <script>
-	// const dto = {'' : , '' : };
-
-	$.ajax({
-	    type : 'GET',
-	    url : '/book/highlight',
-		// data : dto,
-	    dataType : 'json',
-	    contentType : 'application/json',
-	    success: (data) => {
-			const status = data.status;
-			
-			if(status != '200') {
-				alert('[알림] 데이터를 로드할 수 없습니다.');
-			} else {
-				const result = data.data;
-				
-				$.each(result, function(idx, item) {
-					const author   	= item.author    || '';
-					const title  	= item.title     || '';
-					const highlight = item.highlight || '';
-					
-					const el = `<div class="wrap">
-									<div class="highlight-wrap">
-										<p class="highlight"> ${highlight}</p>
-										<p class="author">- ${title} '${author}' -</p>
-									</div>
-								</div>`
-					
-					$('section').append(el);
-				});
-			}
-	    },
-	    error: (x) => {
-			console.log(x);
-		}
+	$(document).ready(function() {
+		sectionClear();
+		getInfo();
 	});
+	
+	function getInfo() {
+		sectionClear();
+		
+		const el = `<div class="wrap">
+						<div class="highlight-wrap first">
+							<p class="highlight first">많이 읽을수록 더 많이 알게 된다. <br> 더 많이 배울수록 더 멀리 가게 된다.</p>
+							<p class="author">- Dr. Seuss -</p>
+						</div>
+					</div>
+					<div class="wrap">
+						<div class="highlight-wrap" style="text-align: center">
+							<p>동기부여 할려고 만든 프로젝트</p>
+							<br>
+							<p>2025-04-12 ~ 2025-04-13</p>
+						</div>
+					</div>`
+		
+		$('section').append(el);
+	}
+	
+	function sectionClear() {
+		const $section = $('section');
+		
+		$section.empty();
+		
+		const el = `<div class="wrap">
+						<div class="nav">
+							<p><a onclick="getInfo()">홈</a></p>
+							<p onclick="getHighlight()">북마크</p>
+							<p><a onclick="getBook('A_1')">읽기 전</a></p>
+							<p><a onclick="getBook('A_2')">읽는 중</a></p>
+							<p><a onclick="getBook('A_3')">읽기 완료</a></p>
+						</div>
+					</div>`;
+		
+		$section.append(el);
+	}
+	
+	function getBook(status) {
+		sectionClear();
+		
+		const dto = {'searchReadingStatusCode' : status};
+
+				$.ajax({
+				    type : 'GET',
+				    url : '/book',
+					data : dto,
+				    dataType : 'json',
+				    contentType : 'application/json',
+				    success: (data) => {
+						const status = data.status;
+						
+						if(status != '200') {
+							alert('[알림] 데이터를 로드할 수 없습니다.');
+						} else {
+							const result = data.data;
+							const dataLength = result.length;
+							
+							if(dataLength == 0) {
+								const el = `<div class="wrap">
+												<div class="highlight-wrap" style="text-align: center">
+													<p>아직 없습니다.</p>
+												</div>
+											</div>`
+
+								$('section').append(el);
+							} else {
+								$.each(result, function(idx, item) {
+									const author   	= item.author    || '';
+									const title  	= item.title     || '';
+									const publisher = item.publisher || '';
+									
+									const el = `<div class="wrap">
+													<div class="highlight-wrap">
+														<p>제목 : ${title}</p>
+														<p>저자 : ${author}</p>
+														<p>출판사 : ${publisher}</p>
+													</div>
+												</div>`
+									
+									$('section').append(el);
+								});
+							}
+							
+						}
+				    },
+				    error: (x) => {
+						console.log(x);
+					}
+				});
+	}
+	
+	function getHighlight() {
+		sectionClear();
+		
+		// const dto = {'' : , '' : };
+
+		$.ajax({
+		    type : 'GET',
+		    url : '/book/highlight',
+			// data : dto,
+		    dataType : 'json',
+		    contentType : 'application/json',
+		    success: (data) => {
+				const status = data.status;
+				
+				if(status != '200') {
+					alert('[알림] 데이터를 로드할 수 없습니다.');
+				} else {
+					const result = data.data;
+					
+					$.each(result, function(idx, item) {
+						const author   	= item.author    || '';
+						const title  	= item.title     || '';
+						const highlight = item.highlight || '';
+						
+						const el = `<div class="wrap">
+										<div class="highlight-wrap">
+											<p class="highlight"> ${highlight}</p>
+											<p class="author">- ${title} '${author}' -</p>
+										</div>
+									</div>`
+						
+						$('section').append(el);
+					});
+				}
+		    },
+		    error: (x) => {
+				console.log(x);
+			}
+		});
+	}
 </script>
 </html>
