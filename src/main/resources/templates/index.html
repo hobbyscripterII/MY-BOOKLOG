@@ -2,4 +2,42 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{fragments/layout}" layout:fragment="section">
 <section>
 </section>
+<script>
+	// const dto = {'' : , '' : };
+
+	$.ajax({
+	    type : 'GET',
+	    url : '/book/highlight',
+		// data : dto,
+	    dataType : 'json',
+	    contentType : 'application/json',
+	    success: (data) => {
+			const status = data.status;
+			
+			if(status != '200') {
+				alert('[알림] 데이터를 로드할 수 없습니다.');
+			} else {
+				const result = data.data;
+				
+				$.each(result, function(idx, item) {
+					const author   	= item.author    || '';
+					const title  	= item.title     || '';
+					const highlight = item.highlight || '';
+					
+					const el = `<div class="wrap">
+									<div class="highlight-wrap">
+										<p class="highlight"> ${highlight}</p>
+										<p class="author">- ${title} '${author}' -</p>
+									</div>
+								</div>`
+					
+					$('section').append(el);
+				});
+			}
+	    },
+	    error: (x) => {
+			console.log(x);
+		}
+	});
+</script>
 </html>
