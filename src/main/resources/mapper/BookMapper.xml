@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.project.booklog.book.BookMapper">
+	<select id="getReadingStatusCode" resultType="ReadingStatusCodeGetVo">
+		SELECT CODE, NAME
+		FROM TBL_CODE
+		WHERE CODE LIKE '%A_%'
+	</select>
+	
+	<select id="getBook" parameterType="BookGetDto" resultType="BookGetVo">
+		SELECT BOOK.IBOOK, BOOK.TITLE, BOOK.AUTHOR, BOOK.PUBLISHER, BOOK.PUBLISHER_DATE, BOOK.GENRE, BOOK.COMMENT, BOOK.THUMBNAIL, CODE.CODE AS READING_STATUS_CODE, CODE.NAME AS READING_STATUS_NAME
+		FROM TBL_BOOK BOOK
+		INNER JOIN TBL_CODE CODE
+		ON BOOK.READING_STATUS = CODE.CODE
+		WHERE CODE.CODE = #{searchReadingStatusCode}
+	</select>
+	
+	<select id="getHighlight" parameterType="HighlightGetDto" resultType="HighlightGetVo">
+		SELECT HIGHLIGHT.IHIGHLIGHT, HIGHLIGHT.IBOOK, HIGHLIGHT.HIGHLIGHT, BOOK.TITLE, BOOK.AUTHOR, HIGHLIGHT.CREATED_AT
+		FROM TBL_HIGHLIGHT HIGHLIGHT
+		INNER JOIN TBL_BOOK BOOK
+		ON HIGHLIGHT.IBOOK = BOOK.IBOOK
+		ORDER BY HIGHLIGHT.CREATED_AT DESC
+	</select>
+</mapper>
