@@ -9,5 +9,6 @@ public class HighlightGetVo {
 	private String highlight;
 	private String title;
 	private String author;
+	private String fixYn;
 	private String createdAt;
 }

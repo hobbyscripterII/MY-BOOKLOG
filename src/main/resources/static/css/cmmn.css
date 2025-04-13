@@ -5,14 +5,32 @@ body {background: url('/image/img-background.jpg') no-repeat center center fixed
 a {text-decoration:none;}
 p,span,tr,td {font-size:13px;}
 h4 {padding:25px;display:inline;}
-section {box-sizing: border-box;display: flex;justify-content: center;padding: 20px;flex-wrap: wrap;}
-.wrap {width: 100%;display: flex;justify-content: center;margin-bottom: 20px;}
-.highlight-wrap, .highlight-wrap.first, .nav {box-sizing: border-box;width: 300px;background-color: rgba(255, 255, 255, 0.7);padding: 20px;}
-.highlight-wrap, .highlight-wrap.first p {color: #000;font-size: 14px;letter-spacing: 0.05em;line-height: 1.4;text-shadow: 1px 1px 3px rgba(0,0,0,0.1);}
-.highlight-wrap.first {background-color: #000;}
-.highlight-wrap.first p {color: #fff;text-shadow: 1px 1px 1px rgba(0,0,0,0.1);}
-.highlight {font-size: 1rem;}
+section {box-sizing: border-box;display: flex;justify-content: center;flex-wrap: wrap;}
+svg {width: 25px;height: 25px;position: relative;top: 16px;color: red;margin: -12px 0;padding: 0;}
+.wrap {width: 100%;display: flex;justify-content: center;flex-wrap: wrap;margin: 20px 0;}
+.wrap.add {margin: -10px 0 -10px;}
+.highlight-wrap, .highlight-wrap.first, .nav {box-sizing: border-box;width: 300px;background-color: rgba(255, 255, 255, 0.9);padding: 25px 20px 18px;box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.3);}
+.highlight-wrap, .highlight-wrap.first p {border-radius: 5px;color: #000;font-size: 14px;letter-spacing: 0.05em;line-height: 1.4;text-shadow: 1px 1px 1px rgba(0,0,0,0.3);}
+.highlight-wrap.first {background-color: rgba(0, 0, 0, 0.6);}
+.highlight-wrap.first p {color: #fff;text-shadow: 1px 1px 1px rgba(0,0,0,0.4);}
+.highlight {font-size: 14px;}
 .author {margin-top: 10px;text-align: end;font-size: 11px !important;}
 .nav {display: flex;justify-content: center; padding: 5px;}
-.nav p {color: #000;margin: 0 5px;}
+.nav p {font-size: 13px;color: #000;text-shadow: 1px 1px 1px rgba(0,0,0,0.3);margin: 0 3px;cursor: pointer;}
 .nav p:hover {text-decoration: underline;}
+.nav a {color: #000;}
+.login-wrap {width: 300px;display: flex;justify-content: center;flex-wrap: wrap;}
+.login-wrap input {box-sizing: border-box; width: 100%;text-align: center;margin-bottom: 10px;border: 1px solid #dbdbdb;padding: 10px;font-size: 15px;border-radius: 5px;}
+.login-wrap button {width: 100%;padding: 10px;border-radius: 5px;border: none;font-size: 15px;}
+.highlight-wrap.first p {text-align: center;}
+.highlight-wrap.add {/* margin-top: 20px; */}
+.highlight textarea {width: 100%; height: 150px; resize: none;border: 1px solid #dbdbdb;font-size: 15px;}
+.btn-wrap {text-align: right;padding-top: 10px;}
+.btn-wrap.top {padding-top: 0;display: flex;justify-content: end;width: 100%;}
+.btn-wrap.top button {width: 50px !important;padding: 7px 0 !important;}
+.btn-wrap button {border: 1px solid #dbdbdb;width: 50px;padding: 7px 0;background-color: #333;color: #fff;border-radius: 4px;cursor: pointer;}
+.btn-red, .btn-blue {width: 70px !important;padding: 7px 6px !important;}
+.btn-red {border: 1px solid red !important;background-color: red !important;}
+.btn-blue {border: 1px solid blue !important;background-color: blue !important;}
+.contents {max-width: 300px;}
+#author {width: 100%;padding: 5px 5px;border: 1px solid #dbdbdb;}

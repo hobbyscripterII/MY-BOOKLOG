@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.project.booklog.admin.book.AdminBookMapper">
+	<insert id="insHighlight" parameterType="HighlightInsDto">
+		INSERT INTO TBL_HIGHLIGHT(IBOOK, HIGHLIGHT) VALUES(#{ibook}, #{highlight})
+	</insert>
+	
+	<update id="updHighlight" parameterType="HighlightUpdDto">
+		UPDATE TBL_HIGHLIGHT
+		SET HIGHLIGHT = #{highlight}
+		WHERE IHIGHLIGHT = #{ihighlight}
+	</update>
+	
+	<update id="delHighlight" parameterType="HighlightDelDto">
+		UPDATE TBL_HIGHLIGHT
+		SET DEL_YN = 'Y'
+		WHERE IHIGHLIGHT = #{ihighlight}
+	</update>
+	
+	<insert id="insBook" parameterType="BookInsDto">
+		INSERT INTO TBL_BOOK(TITLE, AUTHOR, PUBLISHER, PUBLISHER_DATE, GENRE, COMMENT, READING_STATUS)
+		VALUES(#{title}, #{author}, #{publisher}, NOW(), '', '', #{readingStatus})
+	</insert>
+	
+	<update id="updBook" parameterType="BookUpdDto">
+		UPDATE TBL_BOOK SET
+		TITLE = #{title},
+		AUTHOR = #{author},
+		PUBLISHER = #{publisher},
+		READING_STATUS = #{readingStatus}
+		WHERE IBOOK = #{ibook}
+	</update>
+	
+	<update id="delBook" parameterType="BookDelDto">
+		UPDATE TBL_BOOK
+		SET DEL_YN = 'Y'
+		WHERE IBOOK = #{ibook}
+	</update>
+</mapper>

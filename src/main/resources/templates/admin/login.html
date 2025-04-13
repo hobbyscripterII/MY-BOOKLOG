@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{fragments/layout}" layout:fragment="section">
+<style>
+	h3 {color: #fff;text-shadow: 1px 1px 1px rgba(0,0,0,0.3);margin: 0 0 15px 0;text-align: center;}
+</style>
+<section>
+	<div class="login-wrap">
+		<div class="contents">
+			<div class="wrap">
+				<div class="nav">
+					<p><a onclick="getInfo()">홈</a></p>
+					<p onclick="getHighlight()">북마크</p>
+					<p><a onclick="getBook('A_1')">읽기 전</a></p>
+					<p><a onclick="getBook('A_2')">읽는 중</a></p>
+					<p><a onclick="getBook('A_3')">읽기 완료</a></p>
+					<p><a href="login">로그인</a></p>
+				</div>
+			</div>
+		
+			<h3>북로그 관리자 페이지</h3>
+			<form id="form" method="POST" action="login">
+				<input type="password" id="id" name="id" placeholder="아이디">
+				<input type="password" id="pwd" name="pwd" placeholder="패스워드">
+				<button onclick="return login()">로그인</button>
+			</form>
+		</div>
+	</div>
+</section>
+<script th:src="@{/js/index.js}"></script>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{fragments/layout}" layout:fragment="section">
+<style>
+	.highlight-wrap input, .highlight-wrap select {
+		width: 100%;
+	    padding: 5px;
+	    box-sizing: border-box;
+	    margin: 8px 0;
+	    font-size: 15px;
+	    border: 1px solid #dbdbdb;
+	}
+</style>
+<section>
+	<div class="wrap">
+		<div class="nav">
+			<p><a onclick="getInfo()">홈</a></p>
+			<p onclick="getHighlight()">북마크 관리</p>
+			<p><a onclick="getBook('A_0')">서적 관리</a></p>
+			<p><a th:href="@{/logout}">로그아웃</a></p>
+		</div>
+	</div>
+	
+	<div class="contents">
+		<!--
+		<div class="wrap">
+			<div class="highlight-wrap">
+				<p>제목</p>
+				<input type="text">
+				<p>저자</p>
+				<input type="text">
+				<p>출판사</p>
+				<input type="text">
+				<p>읽기 상태</p>
+				<select>
+					<option>읽기 상태1</option>
+					<option>읽기 상태2</option>
+					<option>읽기 상태3</option>
+				</select>
+				
+				<div class="btn-wrap">
+					<button onclick="bookModifyForm(this, '${ibook}')">수정</button>
+				</div>
+			</div>
+	   </div>
+											   
+		<div class="wrap">
+			<div class="highlight-wrap">
+			<p class="highlight">테스트</p>
+			<p class="author">- 테스트 -</p>
+			<div class="btn-wrap">
+				<button onclick="delHighlight('5')">삭제</button>
+				<button class="btn-red" onclick="modifyCancel(this, '5')">수정 취소</button>
+				<button class="btn-blue" onclick="modify(this, '5')">수정 완료</button>
+			</div>
+			</div>
+		</div>
+		-->
+	</div>
+</section>
+<script th:src="@{/js/admin.js}"></script>
+</html>
