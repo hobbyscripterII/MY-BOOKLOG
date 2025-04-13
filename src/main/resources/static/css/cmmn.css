@@ -4,6 +4,7 @@
 body {background: url('/image/img-background.jpg') no-repeat center center fixed;background-size: cover;margin: 0;height: 100vh;}
 a {text-decoration:none;}
 p,span,tr,td {font-size:13px;}
+img {max-width: 100%;margin-top: 5px;}
 h4 {padding:25px;display:inline;}
 section {box-sizing: border-box;display: flex;justify-content: center;flex-wrap: wrap;}
 svg {width: 25px;height: 25px;position: relative;top: 16px;color: red;margin: -12px 0;padding: 0;}
@@ -23,6 +24,7 @@ svg {width: 25px;height: 25px;position: relative;top: 16px;color: red;margin: -1
 .login-wrap input {box-sizing: border-box; width: 100%;text-align: center;margin-bottom: 10px;border: 1px solid #dbdbdb;padding: 10px;font-size: 15px;border-radius: 5px;}
 .login-wrap button {width: 100%;padding: 10px;border-radius: 5px;border: none;font-size: 15px;}
 .highlight-wrap.first p {text-align: center;}
+.highlight-wrap.first .readme {text-align: left;}
 .highlight-wrap.add {/* margin-top: 20px; */}
 .highlight textarea {width: 100%; height: 150px; resize: none;border: 1px solid #dbdbdb;font-size: 15px;}
 .btn-wrap {text-align: right;padding-top: 10px;}
@@ -34,3 +36,7 @@ svg {width: 25px;height: 25px;position: relative;top: 16px;color: red;margin: -1
 .btn-blue {border: 1px solid blue !important;background-color: blue !important;}
 .contents {max-width: 300px;}
 #author {width: 100%;padding: 5px 5px;border: 1px solid #dbdbdb;}
+.highlight-wrap input, .highlight-wrap select {width: 100%;padding: 5px;box-sizing: border-box;margin: 8px 0;font-size: 15px;border: 1px solid #dbdbdb;}
+.fix-wrap {display: flex;align-items: center;justify-content: right;}
+.fix-wrap label {margin-right: 5px;}
+.fix-wrap input[type="checkbox"] {width: 20px;height: 20px;}

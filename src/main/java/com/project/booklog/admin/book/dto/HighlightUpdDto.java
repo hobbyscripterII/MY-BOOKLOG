@@ -6,4 +6,5 @@ import lombok.Data;
 public class HighlightUpdDto {
 	private int ihighlight;
 	private String highlight;
+	private String fixYn;
 }

@@ -6,8 +6,9 @@
 	</insert>
 	
 	<update id="updHighlight" parameterType="HighlightUpdDto">
-		UPDATE TBL_HIGHLIGHT
-		SET HIGHLIGHT = #{highlight}
+		UPDATE TBL_HIGHLIGHT SET
+		HIGHLIGHT = #{highlight},
+		FIX_YN = #{fixYn}
 		WHERE IHIGHLIGHT = #{ihighlight}
 	</update>
 	

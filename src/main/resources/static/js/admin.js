@@ -150,8 +150,19 @@ function modifyForm(el, ihighlight) {
 	const authorEl        = highlightWrapEl.find('.author');
 	const highlightText   = highlightEl.text();
 	const authorText      = authorEl.text();
+	const fixYn           = highlightWrapEl.find('#fixYn').val();
 	const textareaHtml    = `<textarea>${highlightText}</textarea>`;
-	const btnWrapHtml     = `<button onclick="delHighlight('${ihighlight}')">삭제</button>
+	let btnWrapHtml       = `	 <div class="fix-wrap">
+								 <label>고정 여부</label>`;
+								 
+    if(fixYn == 'Y') {
+		btnWrapHtml += `<input type="checkbox" id="fixYn" checked>`;
+	} else {
+		btnWrapHtml += `<input type="checkbox" id="fixYn">`;
+	}
+								 
+	btnWrapHtml          += `</div>
+							 <button onclick="delHighlight('${ihighlight}')">삭제</button>
 						     <button class="btn-red" onclick="modifyCancel(this, '${ihighlight}')">수정 취소</button>
 							 <button class="btn-blue" onclick="modify(this, '${ihighlight}')">수정 완료</button>`;
 							 
@@ -178,9 +189,11 @@ function modifyCancel(el, ihighlight) {
 function modify(el, ihighlight) {
 	if(confirm('수정하시겠습니까?')) {
 		const highlightWrapEl = $(el).closest('.highlight-wrap');
+		const fixWrapEl       = $(el).closest('.btn-wrap').find('.fix-wrap');
 		const highlightEl     = highlightWrapEl.find('.highlight textarea');
 		const highlightText   = highlightEl.val();
-		const dto 		      = {"ihighlight" : ihighlight, "highlight" : highlightText};
+		const fixYn           = fixWrapEl.find('#fixYn').is(':checked') ? 'Y' : 'N';
+		const dto 		      = {"ihighlight" : ihighlight, "highlight" : highlightText, "fixYn" : fixYn};
 		
 		$.ajax({
 		    type : 'PUT',
@@ -534,6 +547,7 @@ function getHighlight() {
 					}
 					
 					el += `<div class="highlight-wrap">
+								    <input type="hidden" id="fixYn" value="${fixYn}">
 									<p class="highlight">${highlight}</p>
 									<p class="author">- ${title} '${author}' -</p>
 									<div class="btn-wrap">
