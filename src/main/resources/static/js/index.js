@@ -30,7 +30,7 @@ function getInfo() {
 					</div>
 				</div>
 				<div class="wrap">
-					<div class="highlight-wrap" onclick="getReadme()" style="text-align: center; cursor: pointer">
+					<div class="highlight-wrap info" onclick="getReadme()" style="text-align: center; cursor: pointer">
 						<h2>프로젝트 소개</h2>
 					</div>
 				</div>`
@@ -51,7 +51,6 @@ function contentsClear() {
 						<p><a onclick="getBook('A_1')">읽기 전</a></p>
 						<p><a onclick="getBook('A_2')">읽는 중</a></p>
 						<p><a onclick="getBook('A_3')">읽기 완료</a></p>
-						<p><a href="login">로그인</a></p>
 					</div>
 				</div>`;
 	
@@ -63,35 +62,45 @@ function getReadme() {
 	
 	const el = `<div class="wrap">
 					<div class="highlight-wrap">
-					<p class="highlight readme">🗨️ 프로젝트 기획 목적</p>
-					<p class="highlight readme">🥹 책 더 열심히 읽을려고</p>
+					<p class="highlight readme">⚫ 프로젝트 기획 목적</p>
+					<p class="highlight readme">⚪ 책 더 열심히 읽을려고</p>
+					<p class="highlight readme">⚪ 인상깊은 구절 기록용</p>
 					<br>
-					<p class="highlight readme">🗨️ 프로젝트 제작 기간</p>
-					<p class="highlight readme">🥹 2025-04-12 ~ 2025-04-13</p>
+					<p class="highlight readme">⚫ 프로젝트 제작 기간</p>
+					<p class="highlight readme">⚪ 2025-04-12 ~ 2025-04-13</p>
 					<br>
-					<p class="highlight readme">🗨️ 프로젝트 특징</p>
-					<p class="highlight readme">🥹 AJAX 떡칠 & NO Bootstrap..</p>
-					<p class="highlight readme">🥹 모바일 최적화(아마도)</p>
+					<p class="highlight readme">⚫ 기술스택</p>
+					<p class="highlight readme">⚪ Spring Boot, Spring Security</p>
+					<p class="highlight readme">⚪ HTML/CSS, JQuery(AJAX)</p>
+					<p class="highlight readme">⚪ RaspberryPI</p>
+					<p class="highlight readme">⚪ Docker</p>
+					<p class="highlight readme">⚪ Apache(Proxy Pass)</p>
+					<p class="highlight readme">⚪ SSL</p>
 					<br>
-					<p class="highlight readme">🗨️ 프로젝트 기능</p>
+					<p class="highlight readme">⚫ 프로젝트 특징</p>
+					<p class="highlight readme">⚪ 원페이지 프로젝트(AJAX)</p>
+					<p class="highlight readme">⚪ NO BOOTSTRAP</p>
+					<p class="highlight readme">⚪ 모바일 최적화(아마도)</p>
+					<br>
+					<p class="highlight readme">⚫ 프로젝트 기능</p>
 					<img src="/image/img-admin-home.png">
-					<p class="highlight readme">🥹 작고 귀여운 관리자 페이지</p>
+					<p class="highlight readme">⚪ 작고 귀여운 관리자 페이지</p>
 					<br>
 					<img src="/image/img-admin-highlight-add.png">
-					<p class="highlight readme">🥹 등록된 서적에 인상깊은 구절을 기록할 수 있다.</p>
+					<p class="highlight readme">⚪ 등록된 서적에 인상깊은 구절을 기록할 수 있다.</p>
 					<br>
 					<img src="/image/img-admin-highlight-modify.png">
-					<p class="highlight readme">🥹 수정도 가능하며 고정 기능도 있다.</p>
+					<p class="highlight readme">⚪ 수정도 가능하며 고정 기능도 있다.</p>
 					<br>
 					<img src="/image/img-admin-book-add.png">
-					<p class="highlight readme">🥹 서적 등록이 가능하다.</p>
+					<p class="highlight readme">⚪ 서적 등록이 가능하다.</p>
 					<br>
 					<img src="/image/img-admin-book-modify.png">
-					<p class="highlight readme">🥹 수정 및 삭제가 가능하다.</p>
+					<p class="highlight readme">⚪ 수정 및 삭제가 가능하다.</p>
 					<br>
-					<p class="highlight readme">🗨️ 프로젝트를 마무리하며</p>
-					<p class="highlight readme">🥹 디자인을 보니 내가 백엔드라서 다행이다.</p>
-					<p class="highlight readme">🥹 만들지말고 있는 거 쓰자..</p>
+					<p class="highlight readme">⚫ 프로젝트를 마무리하며</p>
+					<p class="highlight readme">⚪ 디자인을 보니 내가 백엔드라서 다행이다.</p>
+					<p class="highlight readme">⚪ 만들지말고 있는 거 쓰자..</p>
 					</div>
 				</div>`;
 				
