@@ -537,6 +537,7 @@ function getHighlight() {
 					const ihighlight = item.ihighlight || '';
 					const fixYn      = item.fixYn      || 'N';
 					
+					/*
 					if(fixYn == 'Y') {
 						el += `<div class="wrap" style="justify-content: right">
 								   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bookmark-star-fill" viewBox="0 0 16 16">
@@ -545,10 +546,12 @@ function getHighlight() {
 					} else {
 						el += `<div class="wrap">`;
 					}
+					*/
 					
+					el += `<div class="wrap">`;
 					el += `<div class="highlight-wrap">
 								    <input type="hidden" id="fixYn" value="${fixYn}">
-									<p class="highlight">${highlight}</p>
+									<p class="highlight book-font">${highlight}</p>
 									<p class="author">- ${title} '${author}' -</p>
 									<div class="btn-wrap">
 										<button onclick="modifyForm(this, '${ihighlight}')">수정</button>

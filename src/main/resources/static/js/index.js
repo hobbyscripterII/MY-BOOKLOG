@@ -76,17 +76,21 @@ function getReadme() {
 					<p class="highlight readme">🗨️ 프로젝트 기능</p>
 					<img src="/image/img-admin-home.png">
 					<p class="highlight readme">🥹 작고 귀여운 관리자 페이지</p>
+					<br>
 					<img src="/image/img-admin-highlight-add.png">
 					<p class="highlight readme">🥹 등록된 서적에 인상깊은 구절을 기록할 수 있다.</p>
+					<br>
 					<img src="/image/img-admin-highlight-modify.png">
 					<p class="highlight readme">🥹 수정도 가능하며 고정 기능도 있다.</p>
+					<br>
 					<img src="/image/img-admin-book-add.png">
 					<p class="highlight readme">🥹 서적 등록이 가능하다.</p>
+					<br>
 					<img src="/image/img-admin-book-modify.png">
 					<p class="highlight readme">🥹 수정 및 삭제가 가능하다.</p>
 					<br>
 					<p class="highlight readme">🗨️ 프로젝트를 마무리하며</p>
-					<p class="highlight readme">🥹 디자인을 보니 내가 백엔드라서 다행이다..</p>
+					<p class="highlight readme">🥹 디자인을 보니 내가 백엔드라서 다행이다.</p>
 					<p class="highlight readme">🥹 만들지말고 있는 거 쓰자..</p>
 					</div>
 				</div>`;
@@ -174,6 +178,7 @@ function getHighlight() {
 					const highlight = item.highlight || '';
 					const fixYn     = item.fixYn     || 'N';
 					
+					/*
 					if(fixYn == 'Y') {
 						el += `<div class="wrap" style="justify-content: right">
 								   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bookmark-star-fill" viewBox="0 0 16 16">
@@ -182,9 +187,11 @@ function getHighlight() {
 					} else {
 						el += `<div class="wrap">`;
 					}
+					*/
 					
+					el += `<div class="wrap">`;
 					el += `<div class="highlight-wrap">
-									<p class="highlight">${highlight}</p>
+									<p class="highlight book-font">${highlight}</p>
 									<p class="author">- ${title} '${author}' -</p>
 						   </div>
 					   </div>`;

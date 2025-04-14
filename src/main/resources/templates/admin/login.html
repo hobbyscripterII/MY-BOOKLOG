@@ -9,6 +9,7 @@
 			<div class="wrap">
 				<div class="nav">
 					<p><a onclick="getInfo()">홈</a></p>
+					<p><a onclick="getReadme()">소개</a></p>
 					<p onclick="getHighlight()">북마크</p>
 					<p><a onclick="getBook('A_1')">읽기 전</a></p>
 					<p><a onclick="getBook('A_2')">읽는 중</a></p>
@@ -19,7 +20,7 @@
 		
 			<h3>북로그 관리자 페이지</h3>
 			<form id="form" method="POST" action="login">
-				<input type="password" id="id" name="id" placeholder="아이디">
+				<input type="text" id="id" name="id" placeholder="아이디">
 				<input type="password" id="pwd" name="pwd" placeholder="패스워드">
 				<button onclick="return login()">로그인</button>
 			</form>

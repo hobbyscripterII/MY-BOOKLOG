@@ -12,11 +12,11 @@ import lombok.RequiredArgsConstructor;
 public class AdminController {
 	@GetMapping("/login")
 	public String login() {
-		return "/admin/login";
+		return "admin/login";
 	}
 	
 	@GetMapping("/home")
 	public String home() {
-		return "/admin/home";
+		return "admin/home";
 	}
 }
