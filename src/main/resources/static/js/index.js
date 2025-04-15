@@ -62,45 +62,29 @@ function getReadme() {
 	
 	const el = `<div class="wrap">
 					<div class="highlight-wrap">
-					<p class="highlight readme">⚫ 프로젝트 기획 목적</p>
-					<p class="highlight readme">⚪ 책 더 열심히 읽을려고</p>
-					<p class="highlight readme">⚪ 인상깊은 구절 기록용</p>
+					<p class="highlight readme">📌 프로젝트 기획 목적</p>
+					<p class="highlight readme">▫️ 동기부여</p>
+					<p class="highlight readme">▫️ 구절 기록용</p>
 					<br>
-					<p class="highlight readme">⚫ 프로젝트 제작 기간</p>
-					<p class="highlight readme">⚪ 2025-04-12 ~ 2025-04-13</p>
+					<p class="highlight readme">📌 프로젝트 제작 기간</p>
+					<p class="highlight readme">▫️ 2025-04-12 ~ 2025-04-13</p>
 					<br>
-					<p class="highlight readme">⚫ 기술스택</p>
-					<p class="highlight readme">⚪ Spring Boot, Spring Security</p>
-					<p class="highlight readme">⚪ HTML/CSS, JQuery(AJAX)</p>
-					<p class="highlight readme">⚪ RaspberryPI</p>
-					<p class="highlight readme">⚪ Docker</p>
-					<p class="highlight readme">⚪ Apache(Proxy Pass)</p>
-					<p class="highlight readme">⚪ SSL</p>
+					<p class="highlight readme">📌 기술스택</p>
+					<p class="highlight readme">▫️ Spring Boot, Spring Security</p>
+					<p class="highlight readme">▫️ HTML/CSS, JQuery(AJAX)</p>
+					<p class="highlight readme">▫️ RaspberryPI</p>
+					<p class="highlight readme">▫️ Docker</p>
+					<p class="highlight readme">▫️ Apache(Proxy Pass)</p>
+					<p class="highlight readme">▫️ SSL</p>
 					<br>
-					<p class="highlight readme">⚫ 프로젝트 특징</p>
-					<p class="highlight readme">⚪ 원페이지 프로젝트(AJAX)</p>
-					<p class="highlight readme">⚪ NO BOOTSTRAP</p>
-					<p class="highlight readme">⚪ 모바일 최적화(아마도)</p>
+					<p class="highlight readme">📌 프로젝트 특징</p>
+					<p class="highlight readme">▫️ 원페이지 프로젝트(AJAX)</p>
+					<p class="highlight readme">▫️ NO BOOTSTRAP</p>
+					<p class="highlight readme">▫️ 모바일 최적화(아마도)</p>
 					<br>
-					<p class="highlight readme">⚫ 프로젝트 기능</p>
-					<img src="/image/img-admin-home.png">
-					<p class="highlight readme">⚪ 작고 귀여운 관리자 페이지</p>
-					<br>
-					<img src="/image/img-admin-highlight-add.png">
-					<p class="highlight readme">⚪ 등록된 서적에 인상깊은 구절을 기록할 수 있다.</p>
-					<br>
-					<img src="/image/img-admin-highlight-modify.png">
-					<p class="highlight readme">⚪ 수정도 가능하며 고정 기능도 있다.</p>
-					<br>
-					<img src="/image/img-admin-book-add.png">
-					<p class="highlight readme">⚪ 서적 등록이 가능하다.</p>
-					<br>
-					<img src="/image/img-admin-book-modify.png">
-					<p class="highlight readme">⚪ 수정 및 삭제가 가능하다.</p>
-					<br>
-					<p class="highlight readme">⚫ 프로젝트를 마무리하며</p>
-					<p class="highlight readme">⚪ 디자인을 보니 내가 백엔드라서 다행이다.</p>
-					<p class="highlight readme">⚪ 만들지말고 있는 거 쓰자..</p>
+					<p class="highlight readme">📌 프로젝트를 마무리하며</p>
+					<p class="highlight readme">▫️ 디자인을 보니 내가 백엔드라서 다행이다.</p>
+					<p class="highlight readme">▫️ 만들지말고 있는 거 쓰자..</p>
 					</div>
 				</div>`;
 				
@@ -187,21 +171,15 @@ function getHighlight() {
 					const highlight = item.highlight || '';
 					const fixYn     = item.fixYn     || 'N';
 					
-					/*
-					if(fixYn == 'Y') {
-						el += `<div class="wrap" style="justify-content: right">
-								   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bookmark-star-fill" viewBox="0 0 16 16">
-								       <path fill-rule="evenodd" d="M2 15.5V2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.74.439L8 13.069l-5.26 2.87A.5.5 0 0 1 2 15.5M8.16 4.1a.178.178 0 0 0-.32 0l-.634 1.285a.18.18 0 0 1-.134.098l-1.42.206a.178.178 0 0 0-.098.303L6.58 6.993c.042.041.061.1.051.158L6.39 8.565a.178.178 0 0 0 .258.187l1.27-.668a.18.18 0 0 1 .165 0l1.27.668a.178.178 0 0 0 .257-.187L9.368 7.15a.18.18 0 0 1 .05-.158l1.028-1.001a.178.178 0 0 0-.098-.303l-1.42-.206a.18.18 0 0 1-.134-.098z"/>
-								   </svg>`;
-					} else {
-						el += `<div class="wrap">`;
-					}
-					*/
-					
 					el += `<div class="wrap">`;
-					el += `<div class="highlight-wrap">
-									<p class="highlight book-font">${highlight}</p>
-									<p class="author">- ${title} '${author}' -</p>
+					el += `<div class="highlight-wrap">`;
+					
+					if(fixYn == 'Y') {
+						el += `<div style="text-align: right"><img class="img-bookmark" src="/image/img-bookmark.png"></div>`;
+					}
+					
+					el += `<p class="highlight book-font">${highlight}</p>
+						       <p class="author">- ${title} '${author}' -</p>
 						   </div>
 					   </div>`;
 				});
