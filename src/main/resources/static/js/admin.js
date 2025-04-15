@@ -46,7 +46,20 @@ function getInfo() {
 }
 
 function contentsClear() {
-	$('.contents').empty();
+	const $contents = $('.contents');
+	
+	$contents.empty();
+	
+	const el = `<div class="wrap">
+					<div class="nav">
+						<p><a onclick="getInfo()">홈</a></p>
+						<p onclick="getHighlight()">북마크 관리</p>
+						<p><a onclick="getBook('A_0')">서적 관리</a></p>
+						<p><a th:href="@{/logout}">로그아웃</a></p>
+					</div>
+				</div>`;
+	
+	$contents.append(el);
 }
 
 function addCencle(el) {
