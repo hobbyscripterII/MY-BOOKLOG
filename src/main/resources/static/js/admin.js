@@ -55,7 +55,7 @@ function contentsClear() {
 						<p><a onclick="getInfo()">홈</a></p>
 						<p onclick="getHighlight()">북마크 관리</p>
 						<p><a onclick="getBook('A_0')">서적 관리</a></p>
-						<p><a th:href="@{/logout}">로그아웃</a></p>
+						<p><a href="/logout">로그아웃</a></p>
 					</div>
 				</div>`;
 	
